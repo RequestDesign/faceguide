@@ -1,0 +1,52 @@
+.news-item {
+    &__img {
+        display: flex;
+        position: relative;
+        height: 47rem;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        @include mobile{
+            height: 72rem;
+        }
+       
+
+        &-self {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+
+        }
+
+        &-arrow {
+            align-self: flex-end;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            & img{
+                @include mobile{
+                    width: 7.2rem;
+                }
+            }
+        }
+        
+        &-date {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            
+        }
+    }
+
+    &__name {
+        @include wrap-text(3);
+        margin-top: 3rem;
+        margin-bottom: 2.8rem;
+    }
+    &__tags{
+        display: flex;
+        gap: 2rem;
+    }
+}

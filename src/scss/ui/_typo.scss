@@ -1,15 +1,111 @@
-.tl1{
-  font-size: 10rem;
+.tl1 {
+  //styleName: H1 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include mobile {
+    font-size: 4.8rem;
+  }
 }
 
 
-.tl2{
-  font-size: 5rem;
+.tl2 {
+  //styleName: H2 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 105%;
+
+  @include mobile {
+    font-size: 7.4rem;
+  }
+
 }
 
 
 
 
-.tl3{
-  font-size: 3rem;
+.tl3 {
+  //styleName: H3 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include mobile {
+    font-size: 4.2rem;
+  }
+
+}
+
+.tl4 {
+  //styleName: H4 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 100%;
+
+  @include mobile {
+    font-size: 4.2rem;
+  }
+
+}
+
+.txt20 {
+  //styleName: Text 20 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+
+  @include mobile {
+    font-size: 3.2rem;
+
+    &._14 {
+      font-size: 2.8rem;
+
+    }
+  }
+
+
+}
+
+.txt17 {
+  //styleName: Text 17;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 105%;
+  letter-spacing: 0.02em;
+
+  @include mobile {
+    font-size: 3.2rem;
+
+    &._14 {
+      font-size: 2.8rem;
+
+    }
+  }
+
+}
+
+
+._arsen {
+  font-family: Arsenica Trial;
+}
+
+.txt{
+  &-up{
+    text-transform: uppercase;
+  }
+  &-right{
+    text-align: right;
+  }
+  &-center{
+    text-align: center;
+
+  }
 }

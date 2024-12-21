@@ -1,0 +1,41 @@
+.two-side {
+    &__c {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        min-height: 60rem;
+
+        @include mobile {
+            grid-template-columns: 100%;
+            gap: 4.6rem;
+
+        }
+
+        &-img {
+            height: 100%;
+            display: flex;
+            border-radius: 3rem;
+            overflow: hidden;
+            @include mobile{
+                grid-row: 2;
+                height: 48rem;
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            @include mobile{
+                grid-row: 1;
+            }
+            & .tl2 {
+                margin-bottom: 4rem;
+            }
+
+            & .txt20 {
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
+}

@@ -8,7 +8,6 @@ const fs = require("fs");
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 const glob = require("glob");
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 const mode = process.env.NODE_ENV || "development";
 const devMode = mode === "development";
 const target = devMode ? "web" : "browserslist";
@@ -249,17 +248,7 @@ module.exports = {
           },
         ],
       }),
-    new FileManagerPlugin({
-      events: {
-        onEnd: {
-          mkdir: [devMode ? '' : 'dist/css'],
-          copy: [
-            { source: 'dist/js', destination: 'deploy/js' },
-            { source: 'dist/css', destination: 'deploy/css' },
-          ]
-        }
-      }
-    }),
+   
   ],
 
 

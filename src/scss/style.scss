@@ -1,16 +1,19 @@
 
-$black: #2D2D33;
+$black: rgba(64, 70, 79, 1);
+$black20: rgba(64, 70, 79, 0.2);
 $white: white;
 $bg: #ffffff;
+$gray: rgba(242, 242, 245, 1);
 $red: rgba(217, 56, 56, 1);
 $green: rgb(94, 217, 56);
-$sectionGap: 20rem;
-$sectionGapMobile: 16rem;
-$contentWidth: 148rem;
+$sectionGap: 15rem;
+$sectionGapMobile: 15rem;
+$contentWidth: 185.6rem;
+$mobilePadding: 3rem;
 
 
 html {
-  font-family: 'Open Sans'; // шрифт по умолчанию по сайту
+  font-family: 'sans-serif'; // шрифт по умолчанию по сайту
   font-size: 0.5208335vw; // на разрешении 1920 0.520835vw === 10px
   font-style: normal;
   font-weight: normal;
@@ -66,8 +69,8 @@ body {
 
   @include mobile {
     width: 100%;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: $mobilePadding;
+    padding-right: $mobilePadding;
   }
 }
 
@@ -82,6 +85,13 @@ main {
     @include mobile {
       margin-top: $sectionGapMobile;
     }
+     &:first-of-type{
+      margin-top: 0;
+      padding-top: 3.2rem;
+      @include mobile{
+        padding-top: 17.2rem;
+      }
+     }
   }
 }
 

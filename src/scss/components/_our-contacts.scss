@@ -1,0 +1,72 @@
+.our-contacts {
+    &__c {
+        border-radius: 3rem;
+        overflow: hidden;
+        position: relative;
+        height: 74rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+@include mobile{
+    height: 72rem;
+    width: 95%;
+}
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+
+            & img {
+                object-position: top;
+            }
+        }
+
+        &-main {
+            border-radius: 50%;
+            border: 1px solid $white;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+            width: 54rem;
+            height: 54rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.4rem;
+            @include mobile{
+                width: 62rem;
+                height: 62rem;
+            }
+
+            & .tl1 {
+                margin-bottom: 5.6rem;
+            }
+
+            &-social {
+                display: flex;
+                gap: 1.2rem;
+
+                &-link {
+                    @include hover {
+                        & svg {
+
+                            & path {
+                                fill: $black;
+                            }
+
+                            & circle {
+                                fill: $white;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

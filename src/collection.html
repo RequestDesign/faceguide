@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>само напишется</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <include src="./components/_header.html"></include>
+
+        <main>
+            <section class="heading-collections">
+                <div class="container heading-collections__c">
+                    <div class="heading-collections__c-bg">
+                        <picture>
+                            <source media="(max-width:768px )" srcset="./assets/images/collections.png">
+                            <img src="./assets/images/collections.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="heading-collections__c-main">
+                        <p class="tl1">
+                            Женская <br />
+                            коллекция
+                        </p>
+                        <p class="txt20">Красота, вдохновленная вами</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--  -->
+            <include src="./components/_our-products.html"></include>
+            <!--  -->
+            <include src="./components/_two-side.html"></include>
+            <!--  -->
+            <section class="structure">
+                <div class="container structure__c">
+                    <div class="structure__c-main">
+                        <p class="structure__c-main-ttl tl1  txt-center">В составе косметики</p>
+                        <p class="structure__c-main-subttl txt20 txt-center txt-up">
+                            Мы используем только натуральные ингредиенты, <br />
+                            которые не вызывают аллергических реакций <br />
+                            и подходят для всех типов кожи.
+                        </p>
+                        <div class="swiper">
+                            <button class="swiper-btn swiper-btn-prev"></button>
+                            <button class="swiper-btn swiper-btn-next"></button>
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide structure__c-main-slide txt-center">
+                                    <div class="structure__c-main-slide-wrp">
+                                        <div class="structure__c-main-slide-img">
+                                            <img src="./assets/images/heading-main-man.png" alt="">
+                                        </div>
+                                        <p class="txt20">item name</p>
+                                        <p class="txt20">item descript</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide structure__c-main-slide txt-center">
+                                    <div class="structure__c-main-slide-wrp">
+                                        <div class="structure__c-main-slide-img">
+                                            <img src="./assets/images/heading-main-man.png" alt="">
+                                        </div>
+                                        <p class="txt20">item name</p>
+                                        <p class="txt20">Lorem ipsum,</p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide structure__c-main-slide txt-center">
+                                    <div class="structure__c-main-slide-wrp">
+                                        <div class="structure__c-main-slide-img">
+                                            <img src="./assets/images/heading-main-man.png" alt="">
+                                        </div>
+                                        <p class="txt20">Lorem ipsum dolor</p>
+                                        <p class="txt20">item descript</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="structure__c-img">
+                        <p class="ui-bordered txt20 ">натуральный состав</p>
+                        <picture>
+                            <source media="(max-width:768px )" srcset="./assets/images/structure-mob.png">
+                            <img src="./assets/images/structure.png" alt="">
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <!--  -->
+            <include src="./components/_our-contacts.html"></include>
+            <!--  -->
+        </main>
+
+        <include src="./components/_footer.html"></include>
+    </div>
+
+
+</body>
+
+</html>

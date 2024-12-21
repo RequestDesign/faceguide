@@ -1,0 +1,67 @@
+.our-categories {
+    position: relative;
+    @include mobile{
+        padding-bottom: 10rem;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3.2rem;
+
+        & .swiper-nav {
+            display: flex;
+            gap: 3.2rem;
+            @include mobile{
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__slide {
+        height: 54rem;
+        display: flex !important;
+        position: relative;
+        width: 77rem;
+
+        @include mobile {
+            width: unset;
+        }
+
+        &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: -1;
+
+            & picture {
+                display: flex;
+
+                & * {
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        & .btn-primary {
+            position: absolute;
+            z-index: 1;
+            bottom: 3.2rem;
+            left: 3.2rem;
+        }
+
+        &-count {
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+}

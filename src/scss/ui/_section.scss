@@ -1,0 +1,21 @@
+.section {
+    &-star {
+        display: flex;
+        gap: 1.4rem;
+        align-items: center;
+
+        @include mobile {
+            gap: 2.8rem;
+        }
+
+        & img {
+            width: 2rem;
+            height: 2rem;
+
+            @include mobile {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+}

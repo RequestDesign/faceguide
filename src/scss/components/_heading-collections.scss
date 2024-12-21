@@ -1,0 +1,36 @@
+.heading-collections {
+    height: 100dvh;
+
+    &__c {
+        position: relative;
+       height: 100%;
+       display: flex;
+        &-bg{
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            & picture{
+                display: flex;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-main{
+            margin-top: 12.3rem;
+            margin-left: 10rem;
+            width: 60rem;
+            height: 60rem;
+            border-radius: 50%;
+            border: 2px solid $white;
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}
