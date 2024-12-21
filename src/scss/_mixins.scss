@@ -1,0 +1,49 @@
+@mixin mobile {
+  @media (max-width: 48em) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
+
+
+@mixin same-size($width, $height) {
+  width: $width;
+  height: $height;
+
+  @media (max-width: 48em) {
+    width: $width * 2;
+    height: $height * 2;
+  }
+
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+
+  }
+}
+
+@mixin wrap-text($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  line-clamp: $lines;
+  box-orient: vertical;
+  @content;
+}
+
+@mixin vh100() {
+  height: min(100vh, 100svh, 100dvh);
+}

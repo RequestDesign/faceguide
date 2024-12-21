@@ -1,0 +1,53 @@
+.col{
+    &-black{
+        color: $black;
+    }
+    &-wh{
+        color: $white;
+    }
+    &-red{
+        color: $red;
+    }
+    &-bg{
+        color: $red;
+    }
+
+}
+/*  */
+.bg{
+    &-black{
+        background-color: $black;
+        
+    }
+    &-wh{
+        background-color: $white;
+    }
+    &-bg{
+        background-color: $bg;
+    }
+}
+
+/*  */
+
+.txt{
+    &-up{
+        text-transform: uppercase;
+    }
+    &-line-hover{
+        @include hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+/*  */
+
+.marked-list{
+    & li{
+        list-style-type: disc;
+        list-style-position: outside;
+    }
+}
+
+/*  */
+

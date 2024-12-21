@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>само напишется</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <include src="./components/_header.html" data-props='{
+      ".container": {
+        "html":  "<h1 class=tl1>header</h1>"
+          }
+       }'></include>
+   
+    <main>
+
+
+    </main>
+  
+    <include src="./components/_footer.html"></include>
+  </div>
+
+  <!--  <script src="https://api-maps.yandex.ru/2.1/?apikey=baf2c816-f3bd-4189-98d8-72b7e716c191&lang=ru_RU" type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(init);
+    function init() {
+      var myMap = new ymaps.Map("map", {
+        center: [47.204572074287015, 39.67028549999995],
+        zoom: 16,
+        controls: ['fullscreenControl']
+      });
+      myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+        hintContent: 'there is no palce for narkomany 😎'
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: './assets/images/icons/map-marker.svg',
+        iconImageSize: [50, 50],
+
+      }),
+        myMap.geoObjects
+          .add(myPlacemark)
+    }
+  </script> -->
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ui</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="disable-margin">
+      <section>
+
+        <div class="container ">
+          <p class="clipboard-info">
+
+          </p>
+          <ul class="">
+            <li class="tl1">tl1</li>
+            <li class="tl2">tl2</li>
+            <li class="tl3">tl3</li>
+            <li class="txt24">txt24</li>
+            <li class="txt24 txt24_bold">txt24_bold</li>
+            <li class="txt20">txt20</li>
+            <li class="txt18">txt18</li>
+            <li class="txt14">txt14</li>
+
+            <li class="clipboard">
+              <p class="some tqwe sdg"> dsogajl;fsd</p>
+            </li>
+            
+
+          </ul>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+ 
+  <script>
+    const info = document.querySelector('.clipboard-info')
+    const target = document.querySelectorAll('.clipboard')
+    target.forEach((e) => e.addEventListener('click', (ev) => {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = ev.currentTarget.innerHTML;
+      document.body.appendChild(tempInput);
+
+      // Выделяем текст
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); // для мобильных устройств
+
+      // Копируем текст
+      document.execCommand('copy');
+
+      // Удаляем временное поле
+      document.body.removeChild(tempInput);
+
+      /*  navigator.clipboard.writeText(ev.currentTarget.innerHTML) */
+      info.textContent = `copied into clipboard: ${ev.currentTarget.children[0].classList.value}`
+
+    }))
+
+  </script>
+  <style>
+    @charset "UTF-8";
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      /* height: 100%; */
+      width: 100%;
+      /* min-width: 32rem; */
+      background: #eeeef0;
+      color: #191817;
+      /* overflow: hidden; */
+      display: flex;
+      justify-content: center;
+    }
+
+    html {
+      font-size: 0.5208335vw;
+    }
+
+    body {
+      font-family: sans-serif;
+      font-size: 100%;
+      line-height: 1;
+      font-size: 2.5rem;
+      user-select: none;
+    }
+
+
+
+    ul,
+    ol {
+      margin-bottom: 10rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      border: 1px solid red;
+    }
+
+    ul li,
+    ol li {
+      font-size: 2.3rem;
+    }
+
+    li {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .flex {
+      display: flex;
+      gap: 2rem;
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+
+    a {
+      color: #191817;
+      transition: color 0.5s ease;
+    }
+
+
+
+
+
+    @media (max-width: 48em) {
+      html {
+        font-size: 1.5625vw;
+      }
+    }
+  </style>
+</body>
+
+</html>
