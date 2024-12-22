@@ -2,22 +2,140 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 576:
+/***/ 81:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 
 // EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
 var jquery = __webpack_require__(755);
 var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
-// EXTERNAL MODULE: ./node_modules/inputmask/dist/inputmask.js
-var inputmask = __webpack_require__(382);
-var inputmask_default = /*#__PURE__*/__webpack_require__.n(inputmask);
-// EXTERNAL MODULE: ./node_modules/swiper/modules/index.mjs + 25 modules
-var modules = __webpack_require__(217);
+// EXTERNAL MODULE: ./node_modules/swiper/modules/index.mjs + 27 modules
+var modules = __webpack_require__(938);
 // EXTERNAL MODULE: ./node_modules/swiper/swiper.mjs + 1 modules
 var swiper = __webpack_require__(652);
-;// CONCATENATED MODULE: ./src/js/main.js
+;// CONCATENATED MODULE: ./src/js/utils/constants.js
+const rem = function (rem) {
+  if (window.innerWidth > 768) {
+    return 0.005208335 * window.innerWidth * rem;
+  } else {
+    // где 375 это ширина мобильной версии макета
+    return 100 / 375 * (0.05 * window.innerWidth) * rem;
+  }
+};
+let bodyLockStatus = true;
+let bodyUnlock = function () {
+  let delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 500;
+  let body = document.querySelector('body');
+  if (bodyLockStatus) {
+    setTimeout(() => {
+      body.style.paddingRight = '0px';
+      // document.querySelector('header').style.paddingRight = '0px';
+      document.documentElement.classList.remove('lock');
+    }, delay);
+    bodyLockStatus = false;
+    setTimeout(function () {
+      bodyLockStatus = true;
+    }, delay);
+  }
+};
+let bodyLock = function () {
+  let delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 500;
+  let body = document.querySelector('body');
+  if (bodyLockStatus) {
+    const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+    let scrollWith = getScrollbarWidth();
+    body.style.paddingRight = `${scrollWith}px`;
+    // document.querySelector('header').style.paddingRight = `${scrollWith}px`
+    document.documentElement.classList.add('lock');
+    bodyLockStatus = false;
+    setTimeout(function () {
+      bodyLockStatus = true;
+    }, delay);
+  }
+};
 
+// smooth behavior ============================================================
+const _slideUp = function (target) {
+  let duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  let showmore = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  if (!target.classList.contains('_slide')) {
+    target.classList.add('_slide');
+    target.style.transitionProperty = 'height, margin, padding';
+    target.style.transitionDuration = duration + 'ms';
+    target.style.height = `${target.offsetHeight}px`;
+    target.offsetHeight;
+    target.style.overflow = 'hidden';
+    target.style.height = showmore ? `${showmore}px` : `0px`;
+    target.style.paddingTop = 0;
+    target.style.paddingBottom = 0;
+    target.style.marginTop = 0;
+    target.style.marginBottom = 0;
+    window.setTimeout(() => {
+      target.hidden = !showmore ? true : false;
+      !showmore ? target.style.removeProperty('height') : null;
+      target.style.removeProperty('padding-top');
+      target.style.removeProperty('padding-bottom');
+      target.style.removeProperty('margin-top');
+      target.style.removeProperty('margin-bottom');
+      !showmore ? target.style.removeProperty('overflow') : null;
+      target.style.removeProperty('transition-duration');
+      target.style.removeProperty('transition-property');
+      target.classList.remove('_slide');
+      // create event
+      document.dispatchEvent(new CustomEvent('slideUpDone', {
+        detail: {
+          target: target
+        }
+      }));
+    }, duration);
+  }
+};
+const _slideDown = function (target) {
+  let duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  let showmore = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+  if (!target.classList.contains('_slide')) {
+    target.classList.add('_slide');
+    target.hidden = target.hidden ? false : null;
+    showmore ? target.style.removeProperty('height') : null;
+    let height = target.offsetHeight;
+    target.style.overflow = 'hidden';
+    target.style.height = showmore ? `${showmore}px` : `0px`;
+    target.style.paddingTop = 0;
+    target.style.paddingBottom = 0;
+    target.style.marginTop = 0;
+    target.style.marginBottom = 0;
+    target.offsetHeight;
+    target.style.transitionProperty = 'height, margin, padding';
+    target.style.transitionDuration = duration + 'ms';
+    target.style.height = height + 'px';
+    target.style.removeProperty('padding-top');
+    target.style.removeProperty('padding-bottom');
+    target.style.removeProperty('margin-top');
+    target.style.removeProperty('margin-bottom');
+    window.setTimeout(() => {
+      target.style.removeProperty('height');
+      target.style.removeProperty('overflow');
+      target.style.removeProperty('transition-duration');
+      target.style.removeProperty('transition-property');
+      target.classList.remove('_slide');
+      // create event
+      document.dispatchEvent(new CustomEvent('slideDownDone', {
+        detail: {
+          target: target
+        }
+      }));
+    }, duration);
+  }
+};
+const _slideToggle = function (target) {
+  let duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  if (target.hidden) {
+    return _slideDown(target, duration);
+  } else {
+    return _slideUp(target, duration);
+  }
+};
+;// CONCATENATED MODULE: ./src/js/main.js
 
 
 
@@ -26,30 +144,133 @@ var swiper = __webpack_require__(652);
 /* import './js/main' */
 
 jquery_default()(function () {
-  const t = jquery_default()('header');
-  t.append('<div> jquery hello </div>');
-  console.log((inputmask_default()));
-  console.log(swiper/* default */.Z);
+  initSwipers();
+  initdropDowns();
+  modalsHandler();
 });
-console.log(modules/* Navigation */.W_);
-console.log(jquery_default()('header'));
-function initForms() {
-  function formSubmit(inputData) {
-    console.log(inputData);
+function initSwipers() {
+  const adv = document.querySelector('.advantages');
+  if (adv) {
+    new swiper/* default */.Z(adv.querySelector('.swiper'), {
+      modules: [modules/* Navigation */.W_, modules/* EffectCreative */.gI],
+      effect: window.innerWidth > 768 ? "creative" : "slide",
+      slidesPerView: 1.2,
+      centeredSlides: true,
+      initialSlide: 1,
+      spaceBetween: rem(3),
+      creativeEffect: {
+        prev: {
+          translate: ["-140%", 0, -400]
+        },
+        next: {
+          translate: ["140%", 0, -400]
+        }
+      },
+      breakpoints: {
+        768: {
+          spaceBetween: 0,
+          slidesPerView: 3
+        }
+      },
+      navigation: {
+        prevEl: adv.querySelector('.swiper-btn-prev'),
+        nextEl: adv.querySelector('.swiper-btn-next')
+      }
+    });
   }
-  const forms = document.querySelectorAll('.form');
-  if (forms) {
-    forms.forEach(e => {
-      new Form(e, formSubmit);
-      const phone = $(e).find('input[name="phone"]');
-      if (phone) {
-        new Inputmask('+7 (999) 999-99-99').mask(phone);
+  const ourProjects = document.querySelector('.our-products');
+  if (ourProjects) {
+    new swiper/* default */.Z(ourProjects.querySelector('.swiper'), {
+      modules: [modules/* Navigation */.W_],
+      spaceBetween: rem(2.4),
+      slidesPerView: 2.3,
+      centeredSlides: true,
+      initialSlide: 2,
+      breakpoints: {
+        768: {
+          initialSlide: 1,
+          centeredSlides: false,
+          slidesPerView: 4
+        }
+      },
+      navigation: {
+        prevEl: ourProjects.querySelector('.swiper-btn-prev'),
+        nextEl: ourProjects.querySelector('.swiper-btn-next')
+      }
+    });
+  }
+  const ourCategories = document.querySelector('.our-categories');
+  if (ourCategories) {
+    new swiper/* default */.Z(ourCategories.querySelector('.swiper'), {
+      modules: [modules/* Navigation */.W_],
+      navigation: {
+        prevEl: ourCategories.querySelector('.swiper-btn-prev'),
+        nextEl: ourCategories.querySelector('.swiper-btn-next')
+      },
+      slidesPerView: 1,
+      spaceBetween: rem(3),
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto'
+        }
+      },
+      on: {
+        init: s => {
+          s.slides.forEach((e, i) => {
+            e.querySelector('.our-categories__slide-count').textContent = (i + 1).toString().padStart(2, '0');
+          });
+        }
+      }
+    });
+  }
+  const structure = document.querySelector('.structure');
+  if (structure) {
+    new swiper/* default */.Z(structure.querySelector('.swiper'), {
+      modules: [modules/* Navigation */.W_, modules/* Grid */.rj],
+      slidesPerView: 1,
+      slidesPerGroup: 2,
+      spaceBetween: rem(3),
+      grid: {
+        fill: 'column',
+        rows: 2
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          grid: {
+            fill: 'row',
+            rows: 1
+          }
+        }
+      },
+      navigation: {
+        prevEl: structure.querySelector('.swiper-btn-prev'),
+        nextEl: structure.querySelector('.swiper-btn-next')
+      }
+    });
+  }
+  const catalog = document.querySelector('.catalog');
+  if (catalog) {
+    new swiper/* default */.Z(catalog.querySelector('.swiper'), {
+      modules: [modules/* Navigation */.W_],
+      slidesPerView: 3.3,
+      spaceBetween: rem(3),
+      centeredSlides: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 8,
+          centeredSlides: false
+        }
+      },
+      navigation: {
+        prevEl: catalog.querySelector('.swiper-btn-prev'),
+        nextEl: catalog.querySelector('.swiper-btn-next')
       }
     });
   }
 }
-function dropDowns() {
-  const ddBtn = $('.drop-down-target');
+function initdropDowns() {
+  const ddBtn = jquery_default()('.drop-down-target');
   if (!ddBtn) return;
   ddBtn.on('click', e => {
     e.preventDefault();
@@ -58,15 +279,15 @@ function dropDowns() {
   });
 }
 function modalsHandler() {
-  const modalOpeners = $('.modal-opener'),
-    modalClosers = $('.modal-closer'),
-    html = $('html');
+  const modalOpeners = jquery_default()('[data-modal]'),
+    modalClosers = jquery_default()('.modal-closer'),
+    html = jquery_default()('html');
   if (!modalOpeners || !modalClosers) return;
   modalOpeners.on('click', ev => {
     const {
       modal
     } = ev.currentTarget.dataset;
-    $(`.modal-${modal}`).fadeIn().addClass('_opened');
+    jquery_default()(`.modal-${modal}`).fadeIn().addClass('_opened');
     html.addClass('_lock');
   });
   modalClosers.on('click', ev => {
@@ -75,9 +296,9 @@ function modalsHandler() {
     } = ev.target;
     if (!classList.contains('modal-closer')) return;
     if (classList.contains('modal')) {
-      $(ev.target).fadeOut().removeClass('_opened');
+      jquery_default()(ev.target).fadeOut().removeClass('_opened');
     } else {
-      $(ev.target.closest('.modal')).fadeOut().removeClass('_opened');
+      jquery_default()(ev.target.closest('.modal')).fadeOut().removeClass('_opened');
     }
     html.removeClass('_lock');
   });
@@ -247,7 +468,7 @@ function initSwichers() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [390,729,522], function() { return __webpack_require__(576); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [390,729], function() { return __webpack_require__(81); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

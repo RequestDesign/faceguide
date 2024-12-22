@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>news-detail.html</title>
+<script defer src="js/swiper.js"></script><script defer src="js/jquery.js"></script><script defer src="js/main.js"></script><link href="css/main.css" rel="stylesheet"></head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+    <div class="container">
+        <h2 class="tl1">header</h2>
+    </div>
+</header>
+
+    <main>
+      <!--  -->
+      <section class="heading">
+    <div class="container heading__c">
+        <div class="heading__c-bg">
+            <picture>
+                <source media="(max-width:768px )" srcset="./assets/images/heading-mob.png">
+                <img src="./assets/images/heading.webp" alt="">
+            </picture>
+        </div>
+        <div class="ui-bread">
+            <a class="ui-bread-el" href="#">главная</a>
+            <a class="ui-bread-el" href="#">текущая</a>
+        </div>
+    </div>
+</section>
+      <!--  -->
+      <section class="news-detail">
+        <div class="container ">
+          <a href="back" class="btn-second">
+            назад к статьям
+          </a>
+          <div class="news-detail__c">
+            <h1>h1 ttl</h1>
+            <h2>h2 text</h2>
+            <p>just text</p>
+            <ul>
+              <li>marked</li>
+              <li class="txt-ud">underline</li>
+            </ul>
+            <div class="news-detail__c-img">
+              <img src="./assets/images/heading-main-man-mob.webp" alt="">
+            </div>
+            <div class="banner-promo">
+
+              <picture>
+                <source media="(max-width: 768px )" srcset="./assets/images/banner-promo-mob.png">
+                <img src="./assets/images/banner-promo.webp" alt="">
+              </picture>
+  
+              <div class="banner-promo__text txt18">
+                акции
+              </div>
+              <p class="tl3">Скидка 10% на первый заказ в нашем магазине</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!--  -->
+      <section class="our-products">
+    <div class="container">
+        <!--  -->
+        <div class="our-products__top">
+            <p class="txt20">
+                <span>
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.03439 1.08632C7.30005 0.0996399 8.69995 0.0996432 8.96561 1.08632L9.97164 4.82274C10.0643 5.16689 10.3331 5.4357 10.6773 5.52836L14.4137 6.53439C15.4004 6.80005 15.4004 8.19995 14.4137 8.46561L10.6773 9.47164C10.3331 9.5643 10.0643 9.83311 9.97164 10.1773L8.96561 13.9137C8.69995 14.9004 7.30005 14.9004 7.03439 13.9137L6.02836 10.1773C5.9357 9.83311 5.66689 9.5643 5.32274 9.47164L1.58632 8.46561C0.59964 8.19995 0.599643 6.80005 1.58632 6.53439L5.32274 5.52836C5.66689 5.4357 5.9357 5.16689 6.02836 4.82274L7.03439 1.08632Z" fill="#331E26"></path>
+                    </svg>
+                </span>
+                продукты faceguide
+            </p>
+            <div class="swiper-nav desktop">
+                <button class="swiper-btn swiper-btn-prev"></button>
+                <button class="swiper-btn swiper-btn-next"></button>
+            </div>
+        </div>
+        <!--  -->
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <a href="to item" class="swiper-slide product-item">
+                    <div class="product-item-img">
+                        <div class="product-item-arrow"></div>
+                        <img src="./assets/images/heading-main-man-mob.webp" alt="">
+                    </div>
+                    <p class="tl3 product-item-ttl">
+                        item name Lorem ipsum dolor sit amet.</p>
+                    <div class="product-item-info">
+                        <p class="txt20  _14 txt-up"> item type</p>
+                        <p class="txt17 txt-up">50 <span>ml</span></p>
+                    </div>
+
+                </a>
+
+            </div>
+        </div>
+        <!--  -->
+        <button class="btn-primary">
+            пойти нахуй
+        </button>
+    </div>
+</section>
+      <!--  -->
+    </main>
+
+    <div class="modal modal-buy ">
+    <div class="modal-main  modal-closer">
+        <div class="modal-c-wrp">
+            <div class="modal__c _buy">
+                <button class="modal__c-close modal-closer">
+                </button>
+                <p class="tl2 txt-center">Купить на:</p>
+                <div class="modal__c-shops">
+                    <a class="tl3 modal__c-shops-el _ozon" href="#">ozon</a>
+                    <a class="tl3 modal__c-shops-el _yandex" href="#">Яндекс.маркет</a>
+                    <a class="tl3 modal__c-shops-el _wild" href="#">wildberries</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <h2 class="tl1">footer</h2>
+    </div>
+</footer>
+  </div>
+
+
+</body>
+
+</html>

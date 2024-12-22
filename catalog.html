@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>catalog.html</title>
+<script defer src="js/swiper.js"></script><script defer src="js/jquery.js"></script><script defer src="js/main.js"></script><link href="css/main.css" rel="stylesheet"></head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+    <div class="container">
+        <h2 class="tl1">header</h2>
+    </div>
+</header>
+
+    <main>
+      <section class="heading">
+    <div class="container heading__c">
+        <div class="heading__c-bg">
+            <picture>
+                <source media="(max-width:768px )" srcset="./assets/images/heading-mob.png">
+                <img src="./assets/images/heading.webp" alt="">
+            </picture>
+        </div>
+        <div class="ui-bread">
+            <a class="ui-bread-el" href="#">главная</a>
+            <a class="ui-bread-el" href="#">текущая</a>
+        </div>
+    </div>
+</section>
+      <!--  -->
+      <section class="catalog">
+        <div class=" container swiper catalog__types">
+          <button class="swiper-btn swiper-btn-prev"></button>
+          <button class="swiper-btn swiper-btn-next"></button>
+          <div class="swiper-wrapper">
+            <label class="catalog__types-el swiper-slide">
+              <!-- не меняй структуру -->
+              <input type="radio" name="item-type">
+              <span class="catalog__types-el-img">
+                <img src="./assets/images/heading-main-man-mob.webp" alt="">
+              </span>
+              <span class="txt20  catalog__types-el-text txt-center">type-name</span>
+            </label>
+            <label class="catalog__types-el swiper-slide">
+              <!-- не меняй структуру -->
+              <input type="radio" name="item-type">
+              <span class="catalog__types-el-img">
+                <img src="./assets/images/heading-main-man-mob.webp" alt="">
+              </span>
+              <span class="txt20  catalog__types-el-text txt-center">type-name</span>
+            </label>
+          </div>
+        </div>
+        <!--  -->
+        <div class="catalog__filters">
+          <div class="container catalog__filters-c">
+            <div class="catalog__filters-c-gender">
+              <input type="radio" checked name="genderCatalog" id="genderCatalogMale">
+              <input type="radio" name="genderCatalog" id="genderCatalogWoman">
+
+              <label class="txt17 txt-up txt-center" for="genderCatalogMale">мужикам</label>
+              <label class="txt17 txt-up txt-center" for="genderCatalogWoman">не мужикам</label>
+
+              <div class="catalog__filters-c-gender-indication"></div>
+            </div>
+
+            <div class="ui-drop-down">
+              <div class="ui-drop-down__target">
+                сортировать
+                <img src="./assets/images/icons/arrow-drop.svg" alt="">
+              </div>
+              <div class="ui-drop-down__c">
+                <div class="ui-drop-down__c-list">
+                  <label class="ui-drop-down__c-list-el">
+                    <input type="radio" checked name="catalogSorting">
+                    <span class="ui-drop-down__c-list-el-text">
+                      популярности
+                    </span>
+
+                  </label>
+
+                  <label class="ui-drop-down__c-list-el">
+                    <input type="radio" name="catalogSorting">
+                    <span class="ui-drop-down__c-list-el-text">
+                      новизне
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="container catalog__list">
+          <a href="to item" class="swiper-slide product-item">
+            <div class="product-item-img">
+              <div class="product-item-arrow"></div>
+              <img src="./assets/images/heading-main-man-mob.webp" alt="">
+            </div>
+            <p class="tl3 product-item-ttl">
+              item name Lorem ipsum dolor sit amet.</p>
+            <div class="product-item-info">
+              <p class="txt20  _14 txt-up"> item type</p>
+              <p class="txt17 txt-up">50 <span>ml</span></p>
+            </div>
+
+          </a>
+         
+          <div class="banner-promo">
+
+            <picture>
+              <source media="(max-width: 768px )" srcset="./assets/images/banner-promo-mob.png">
+              <img src="./assets/images/banner-promo.webp" alt="">
+            </picture>
+
+            <div class="banner-promo__text txt18">
+              акции
+            </div>
+            <p class="tl3">Скидка 10% на первый заказ в нашем магазине</p>
+          </div>
+        </div>
+        <button class="btn-primary">загрузить еще</button>
+      </section>
+      <!--  -->
+      <section class="two-side">
+    <div class="container two-side__c">
+        <div class="two-side__c-img">
+            <img src="./assets/images/heading-main-man-mob.webp" alt="">
+        </div>
+        <div class="two-side__c-text">
+            <p class="tl2">
+                Косметика с подтвержденной эффективностью <strong>faceguide</strong>
+            </p>
+            <p class="txt20">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, rem.
+            </p>
+        </div>
+    </div>
+</section>
+      <!--  -->
+    </main>
+
+    <div class="modal modal-buy ">
+    <div class="modal-main  modal-closer">
+        <div class="modal-c-wrp">
+            <div class="modal__c _buy">
+                <button class="modal__c-close modal-closer">
+                </button>
+                <p class="tl2 txt-center">Купить на:</p>
+                <div class="modal__c-shops">
+                    <a class="tl3 modal__c-shops-el _ozon" href="#">ozon</a>
+                    <a class="tl3 modal__c-shops-el _yandex" href="#">Яндекс.маркет</a>
+                    <a class="tl3 modal__c-shops-el _wild" href="#">wildberries</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <h2 class="tl1">footer</h2>
+    </div>
+</footer>
+  </div>
+
+
+</body>
+
+</html>
