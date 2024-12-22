@@ -1,0 +1,29 @@
+.banner-promo {
+    min-height: 65rem;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 4rem;
+    grid-column: span 2;
+    @include mobile{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    & picture {
+        display: flex;
+
+    }
+
+    &__text {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 1rem 2.4rem;
+        box-sizing: border-box;
+        border-radius: 3rem;
+        border: 2px solid $pink;
+
+    }
+
+}

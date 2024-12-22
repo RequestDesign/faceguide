@@ -1,0 +1,62 @@
+.about {}
+
+
+.about-top {
+    & .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        @include mobile {
+            gap: 3.6rem;
+        }
+
+        & .txt20 {
+            margin-top: 4rem;
+
+            @include mobile {
+                margin-top: 4.8rem;
+            }
+        }
+    }
+}
+
+.about-banner {
+    &__c {
+        background-color: $gray;
+        border-radius: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        @include mobile{
+            grid-template-columns: 100%;
+        }
+
+        &-left {
+            padding: 9rem 6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            @include mobile{
+                padding: 3.2rem 0 1rem;
+            }
+        }
+
+        &-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            @include mobile{
+                position: relative;
+                height: 46rem;
+            }
+             & img{
+                object-fit: contain;
+                object-position: right;
+             }
+        }
+    }
+}

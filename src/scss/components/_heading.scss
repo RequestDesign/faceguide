@@ -1,0 +1,31 @@
+.heading {
+    &__c {
+        height: 53rem;
+        position: relative;
+        display: flex;
+        @include mobile{
+            height: 80rem;
+        }
+
+        &-bg {
+            position: absolute;
+           
+            z-index: -1;
+
+            & picture {
+                height: 100%;
+                width: 100%;
+                display: flex;
+            }
+        }
+
+        & .ui-bread {
+            margin-top: auto;
+            margin-left: 4.4rem;
+            margin-bottom: 4.4rem;
+            @include mobile{
+                 margin: auto auto 5rem ;
+            }
+        }
+    }
+}

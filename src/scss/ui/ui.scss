@@ -14,8 +14,150 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        @include mobile{
+
+        @include mobile {
             padding: 2.2rem 4rem;
+        }
+    }
+
+    &-bread {
+        display: flex;
+        gap: .8rem;
+        //styleName: Text 20 Random Grotesque;
+        font-family: Random Grotesque Spacious Book;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0.02em;
+
+        @include mobile {
+            font-size: 3.2rem;
+        }
+
+        &-el {
+            &::after {
+                content: ' /';
+            }
+
+            &:last-of-type {
+                &::after {
+                    content: '';
+                }
+            }
+
+            @include hover {
+                color: $gray;
+            }
+        }
+
+    }
+
+    &-drop-down {
+        position: relative;
+        box-sizing: border-box;
+        user-select: none;
+        width: fit-content;
+       
+        &:hover{
+            & .ui-drop-down__c{
+                max-height: 100vh;
+            }
+            & .ui-drop-down__target{
+                border-radius: 3rem 3rem 0 0  ;
+                & img{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &__target {
+            padding: 1.2rem 2.4rem;
+            border: 2px solid $black20;
+            border-radius: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1.6rem;
+            //styleName: 375/Text;
+            font-family: Random Grotesque Spacious Book;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 100%;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            background-color: $white;
+
+            @include mobile {
+                padding: 1rem  2.4rem;
+                font-size: 3.2rem;
+            }
+
+            & img {
+                width: 2.4rem;
+                height: 2.4rem;
+                flex-shrink: 0;
+
+                @include mobile {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+        }
+
+        &__c {
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+
+            &-list {
+                height: 100%;
+                padding: 1.6rem .8rem;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                gap: 1.1rem;
+                background-color: $white;
+                border-radius: 0 0 3rem 3rem;
+
+                &-el {
+                    width: fit-content;
+                    cursor: pointer;
+                    padding: .7rem 0;
+                 
+                    & input {
+                        display: none;
+                        &:checked{
+                            &~.ui-drop-down__c-list-el-text{
+                                background-color: $pink;
+                                color: $white;
+                                border-color: transparent;
+                            }
+                        }
+                    }
+
+                    &-text {
+                        border: 2px solid $black20;
+                        border-radius: 2.3rem;
+                        padding: .7rem 1.5rem;
+                        box-sizing: border-box;
+                        //styleName: Text 17;
+                        font-family: Random Grotesque Spacious Book;
+                        font-size: 1.7rem;
+                        font-weight: 400;
+                        line-height: 110%;
+                        letter-spacing: 0.02em;
+
+                        @include mobile {
+                            font-size: 3.2rem;
+                        }
+
+                    }
+
+                }
+            }
         }
     }
 }

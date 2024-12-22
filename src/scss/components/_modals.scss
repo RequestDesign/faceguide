@@ -1,0 +1,134 @@
+.modal {
+
+    display: none;
+    position: fixed;
+    z-index: 1111;
+    width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    color: $black;
+
+    &-c-wrp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+            overflow: auto;
+            height: 100vh;
+        }
+
+    }
+
+    &-main {
+        backdrop-filter: 1rem;
+        -webkit-backdrop-filter: 1rem;
+        background-color: rgba(70, 70, 70, 0.4);
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &._opened {
+
+        & .modal__c {
+            transform: translate(0, 0);
+        }
+
+
+    }
+
+
+    &__c {
+        transform: translate(0, -50%);
+        transition: transform .5s;
+        position: relative;
+        gap: 2rem;
+        background-color: $white;
+        border-radius: 3rem;
+        padding: 7rem 2.4rem;
+        box-sizing: border-box;
+        min-width: 96rem;
+
+        @include mobile {
+            padding: 10rem 2.4rem 7rem;
+            width: calc(100% - $mobilePadding);
+        }
+
+
+        &-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            right: 2.4rem;
+            top: 3rem;
+            z-index: 10;
+            background-image: url(../assets/images/icons/x.svg);
+            background-size: 1.4rem;
+            background-position: center;
+            background-repeat: no-repeat;
+
+
+
+            @include mobile {
+                width: 3rem;
+                height: 3rem;
+                margin-bottom: 4rem;
+                background-size: 100%;
+
+
+            }
+        }
+
+        &-shops {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid $gray;
+
+
+
+            &-el {
+                padding: 1.6rem 2.8rem;
+                font-family: Random Grotesque Spacious Book;
+                font-size: 3.2rem;
+                font-weight: 400;
+                line-height: 110%;
+                letter-spacing: 0.02em;
+                width: fit-content;
+                border-radius: 3rem;
+
+                &._ozon {
+                    background-color: rgba(76, 124, 255, 1);
+                    color: $white;
+                }
+                &._yandex{
+                    background-color: rgba(248, 204, 70, 1);
+                    color: $black;
+                }
+                &._wild{
+                   background-color: rgba(86, 37, 211, 1);
+                   color: $white;
+                }
+
+
+
+            }
+        }
+
+
+
+
+    }
+
+}

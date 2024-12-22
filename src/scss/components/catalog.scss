@@ -1,0 +1,139 @@
+.catalog {
+    &__types {
+        margin-bottom: 10rem;
+
+        & .swiper-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &-next {
+                right: 0;
+            }
+        }
+
+        &-el {
+            min-height: 14rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+
+            @include mobile {
+                min-height: 20rem;
+            }
+
+            @include hover {
+                &>.catalog__types-el-img {
+                    border: 2px solid $black;
+                }
+            }
+
+            &>input {
+                position: absolute;
+                display: none;
+
+                &:checked {
+                    &+.catalog__types-el-img {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &-img {
+                width: 10rem;
+                height: 10rem;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                opacity: .5;
+                border: 2px solid transparent;
+                transition: opacity .5s linear, border .5s linear;
+                flex-shrink: 0;
+
+                @include mobile {
+                    width: 15rem;
+                    height: 15rem;
+                }
+            }
+
+        }
+    }
+
+    &__filters {
+        background-color: $gray;
+        margin-bottom: 10rem;
+
+        &-c {
+            display: flex;
+            justify-content: space-between;
+            padding: 2.2rem 0;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 3rem;
+                padding: 3.2rem $mobilePadding;
+            }
+
+            &-gender {
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-radius: 3rem;
+                background-color: $white;
+                box-shadow: 0px 0px 0px 2px $black20 inset;
+
+                & input {
+                    position: absolute;
+                    display: none;
+
+                    &#genderCatalogWoman:checked {
+                        &~.catalog__filters-c-gender-indication {
+                            left: 50%;
+                        }
+                    }
+                }
+
+                &-indication {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    height: 100%;
+                    border-radius: 3rem;
+                    border: 2px solid $black;
+                    transition: left .2s ease-in-out;
+                }
+
+                & label {
+                    padding: 1.6rem 3rem;
+                    cursor: pointer;
+                }
+            }
+
+            & .ui-drop-down {
+                @include mobile {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12rem 7.4rem;
+        @include mobile{
+            grid-template-columns: 1fr 1fr;
+            gap: 2.8rem;
+        }
+
+    }
+    & .btn-primary{
+        margin-top: 4rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}

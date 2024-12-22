@@ -26,66 +26,7 @@
         }
     }
 
-    &__slide {
-      
-        display: flex !important;
-        flex-direction: column;
-
-        @include mobile {
-           
-        }
-
-        &-img {
-            display: flex;
-            width: 100%;
-            position: relative;
-            height: max-content;
-            height: 45rem;
-            @include mobile{
-                height: 28rem;
-            }
-
-            &-arrow {
-                position: absolute;
-                top: 2rem;
-                right: 2rem;
-                width: 5rem;
-                height: 5rem;
-                background-image: url(../assets/images/icons/arrow-right-pink.svg);
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-                border-radius: 50%;
-                border: 2px solid $black20;
-                z-index: 1;
-
-            }
-
-            & img {
-                object-fit: cover;
-                object-position: center;
-            }
-        }
-
-        &-ttl {
-            @include wrap-text(2);
-           
-         margin:1rem 0 2rem;
-         flex-shrink: 0;
-
-        }
-
-        &-info {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            align-items: flex-start;
-            flex-shrink: 0;
-            & .txt17{
-                flex-shrink: 0;
-            }
-        }
-    }
+    
 
     & .btn-primary{
        margin: 4rem 0 0rem;

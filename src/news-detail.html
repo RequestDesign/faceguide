@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>само напишется</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <include src="./components/_header.html"></include>
+
+    <main>
+      <!--  -->
+      <include src="./components/_heading.html"></include>
+      <!--  -->
+      <section class="news-detail">
+        <div class="container ">
+          <a href="back" class="btn-second">
+            назад к статьям
+          </a>
+          <div class="news-detail__c">
+            <h1>h1 ttl</h1>
+            <h2>h2 text</h2>
+            <p>just text</p>
+            <ul>
+              <li>marked</li>
+              <li class="txt-ud">underline</li>
+            </ul>
+            <div class="news-detail__c-img">
+              <img src="./assets/images/heading-main-man-mob.png" alt="">
+            </div>
+            <div class="banner-promo">
+
+              <picture>
+                <source media="(max-width: 768px )" srcset="./assets/images/banner-promo-mob.png">
+                <img src="./assets/images/banner-promo.png" alt="">
+              </picture>
+  
+              <div class="banner-promo__text txt18">
+                акции
+              </div>
+              <p class="tl3">Скидка 10% на первый заказ в нашем магазине</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!--  -->
+      <include src="./components/_our-products.html"></include>
+      <!--  -->
+    </main>
+
+    <include src="./components/_footer.html"></include>
+  </div>
+
+
+</body>
+
+</html>

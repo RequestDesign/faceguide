@@ -8,6 +8,7 @@
     "deploy": "npm run build-prod&&gh-pages -d dist",
     "scss": "node importScss.js",
     "build": "set NODE_ENV=production&&webpack",
+    "build-prod": "set NODE_ENV=production&&webpack",
     "clear": "rd /s /q dist"
   },
   "author": "",

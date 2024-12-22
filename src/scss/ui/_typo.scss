@@ -73,6 +73,26 @@
 
 }
 
+.txt18 {
+  //styleName: Text 20 Random Grotesque;
+  font-family: Random Grotesque Spacious Book;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+
+  @include mobile {
+    font-size: 3.2rem;
+
+    &._14 {
+      font-size: 2.8rem;
+
+    }
+  }
+
+
+}
+
 .txt17 {
   //styleName: Text 17;
   font-family: Random Grotesque Spacious Book;
@@ -97,15 +117,21 @@
   font-family: Arsenica Trial;
 }
 
-.txt{
-  &-up{
+.txt {
+  &-up {
     text-transform: uppercase;
   }
-  &-right{
+
+  &-right {
     text-align: right;
   }
-  &-center{
+
+  &-center {
     text-align: center;
 
+  }
+
+  &-ud {
+    text-decoration: underline;
   }
 }

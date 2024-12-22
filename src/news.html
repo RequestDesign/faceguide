@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>само напишется</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <include src="./components/_header.html"></include>
+
+    <main>
+
+      <!--  -->
+      <include src="./components/_heading.html"></include>
+      <!--  -->
+      <section class="news news-list">
+        <div class="container">
+          <div class="news-list__top">
+            <div class="desktop news-list__top-c">
+              <label class="ui-drop-down__c-list-el">
+                <input type="radio" checked name="newsSorting">
+                <span class="ui-drop-down__c-list-el-text">
+                  все статьи
+                </span>
+
+              </label>
+
+              <label class="ui-drop-down__c-list-el">
+                <input type="radio" checked name="newsSorting">
+                <span class="ui-drop-down__c-list-el-text">
+                  не все статьи
+                </span>
+              </label>
+
+            </div>
+
+            <div class="ui-drop-down mobile">
+              <div class="ui-drop-down__target">
+                сортировать
+                <img src="./assets/images/icons/arrow-drop.svg" alt="">
+              </div>
+              <div class="ui-drop-down__c">
+                <div class="ui-drop-down__c-list">
+                  <label class="ui-drop-down__c-list-el">
+                    <input type="radio" checked name="newsSorting">
+                    <span class="ui-drop-down__c-list-el-text">
+                      все статьи
+                    </span>
+
+                  </label>
+
+                  <label class="ui-drop-down__c-list-el">
+                    <input type="radio" name="newsSorting">
+                    <span class="ui-drop-down__c-list-el-text">
+                      не все статьи
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="news-list__grid">
+            <a href="to news" class="news-item">
+              <div class="news-item__img">
+                <p class="news-item__img-date txt20  ui-bordered">
+                  20.20
+                </p>
+                <div class="news-item__img-self">
+                  <img src="../assets/images/news1.png" alt="">
+                </div>
+
+                <span class="news-item__img-arrow ui-bordered">
+                  <img src="./assets/images/icons/arrow-right-big.svg" alt="">
+                </span>
+              </div>
+
+              <p class="tl3 news-item__name">
+                news name
+              </p>
+
+              <div class="news-item__tags txt20">
+                <span>tag name</span>
+                <span>tag name</span>
+              </div>
+
+
+            </a>
+          </div>
+          <!--  -->
+          <button class="btn-primary">Загрузить еще</button>
+
+        </div>
+      </section>
+      <!--  -->
+      <section class="news news-banner">
+        <div class="container news-banner__c">
+          <div class="news-banner__c-body">
+            <p class="tl3">
+              Усваивается ли коллаген? <br />
+              Разобрались в самой <br />
+              популярной добавке
+            </p>
+            <p class="txt20">уход</p>
+            <a class="btn-second" href="to about">
+              читать о нас
+            </a>
+          </div>
+          <div class="news-banner__c-img">
+            <picture>
+              <source media="(max-width:768px )" srcset="./assets/images/about-banner.png">
+              <img src="./assets/images/news-banner.png" alt="">
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!--  -->
+    </main>
+
+    <include src="./components/_footer.html"></include>
+  </div>
+
+
+</body>
+
+</html>

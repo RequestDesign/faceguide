@@ -6,6 +6,7 @@ $bg: #ffffff;
 $gray: rgba(242, 242, 245, 1);
 $red: rgba(217, 56, 56, 1);
 $green: rgb(94, 217, 56);
+$pink: rgba(247, 207, 221, 1);
 $sectionGap: 15rem;
 $sectionGapMobile: 15rem;
 $contentWidth: 185.6rem;
@@ -97,7 +98,7 @@ main {
 
 
 .desktop {
-  @include desktop {
+  @include mobile {
     display: none;
   }
 
@@ -106,7 +107,7 @@ main {
 
 
 .mobile {
-  @include mobile {
+  @include desktop {
     display: none;
   }
 

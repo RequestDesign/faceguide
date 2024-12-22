@@ -1,6 +1,5 @@
 
 import $ from 'jquery'
-import Inputmask from 'inputmask'
 import { Navigation, Pagination, Grid, Autoplay, EffectCreative } from 'swiper/modules';
 import Swiper from 'swiper';
 import { rem } from './utils/constants'
@@ -11,6 +10,8 @@ import { rem } from './utils/constants'
 $(function () {
 
     initSwipers()
+    initdropDowns()
+    modalsHandler()
 })
 
 function initSwipers() {
@@ -104,9 +105,9 @@ function initSwipers() {
             breakpoints: {
                 768: {
                     slidesPerView: 2,
-                    grid:{
+                    grid: {
                         fill: 'row',
-                        rows:1
+                        rows: 1
                     }
                 }
             },
@@ -116,10 +117,30 @@ function initSwipers() {
             }
         })
     }
+
+    const catalog = document.querySelector('.catalog')
+    if (catalog) {
+        new Swiper(catalog.querySelector('.swiper'), {
+            modules: [Navigation],
+            slidesPerView: 3.3,
+            spaceBetween: rem(3),
+            centeredSlides: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: 8,
+                    centeredSlides: false
+                }
+            },
+            navigation: {
+                prevEl: catalog.querySelector('.swiper-btn-prev'),
+                nextEl: catalog.querySelector('.swiper-btn-next')
+            }
+        })
+    }
 }
 
 
-function dropDowns() {
+function initdropDowns() {
     const ddBtn = $('.drop-down-target')
     if (!ddBtn) return
 
@@ -133,7 +154,7 @@ function dropDowns() {
 }
 
 function modalsHandler() {
-    const modalOpeners = $('.modal-opener'),
+    const modalOpeners = $('[data-modal]'),
         modalClosers = $('.modal-closer'),
         html = $('html')
 
