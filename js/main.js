@@ -142,7 +142,7 @@ const _slideToggle = function (target) {
 
 
 /* import './js/main' */
-
+const HTML = jquery_default()('html');
 jquery_default()(function () {
   initSwipers();
   initdropDowns();
@@ -160,10 +160,10 @@ function initSwipers() {
       spaceBetween: rem(3),
       creativeEffect: {
         prev: {
-          translate: ["-140%", 0, -400]
+          translate: ["-150%", -40, -400]
         },
         next: {
-          translate: ["140%", 0, -400]
+          translate: ["150%", -40, -400]
         }
       },
       breakpoints: {
@@ -270,12 +270,30 @@ function initSwipers() {
   }
 }
 function initdropDowns() {
-  const ddBtn = jquery_default()('.drop-down-target');
+  const ddBtn = jquery_default()('.drop-down-target').toArray();
   if (!ddBtn) return;
-  ddBtn.on('click', e => {
-    e.preventDefault();
-    e.currentTarget.classList.toggle('_opened');
-    e.currentTarget.closest('.drop-down-container').classList.toggle('_opened');
+  ddBtn.forEach(el => {
+    el = jquery_default()(el);
+    if (el.hasClass('drop-down-fs')) {
+      el.on('click', e => {
+        e.preventDefault();
+        if (!e.currentTarget.classList.contains('_opened')) {
+          e.currentTarget.classList.add('_opened');
+          e.currentTarget.closest('.drop-down-container').classList.add('_opened');
+          HTML.addClass('_lock');
+        } else {
+          e.currentTarget.classList.remove('_opened');
+          e.currentTarget.closest('.drop-down-container').classList.remove('_opened');
+          HTML.removeClass('_lock');
+        }
+      });
+    } else {
+      el.on('click', e => {
+        e.preventDefault();
+        e.currentTarget.classList.toggle('_opened');
+        e.currentTarget.closest('.drop-down-container').classList.toggle('_opened');
+      });
+    }
   });
 }
 function modalsHandler() {
