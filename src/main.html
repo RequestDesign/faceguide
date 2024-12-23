@@ -14,18 +14,15 @@
     <main>
       <section class="heading-main">
         <div class="container heading-main__c">
-          <a href="man" class="heading-main__c-el">
+          <a href="man" class="heading-main__c-el ">
             <div class="heading-main__c-el-bg">
               <picture>
-                <source media="(max-width:768px)" srcset="./assets/images/heading-main-man-mob.png">
+                <source media="(max-width:768px)" srcset="./assets/images/heading-main-man-mob.png" type="image/webp">
                 <img src="./assets/images/heading-main-man.png" alt="">
               </picture>
             </div>
 
-            <button class="btn-primary">
-              смотреть
-              продукты
-            </button>
+
 
             <div class="heading-main__c-el-footer">
               <p class="tl1">
@@ -38,17 +35,18 @@
               </p>
             </div>
           </a>
-          <a href="woman" class="heading-main__c-el">
+          <a href="woman" class="heading-main__c-el btn-primary-hover">
             <div class="heading-main__c-el-bg">
               <picture>
-                <source media="(max-width:768px)" srcset="./assets/images/heading-main-woman-mob.png">
+                <source media="(max-width:768px)" srcset="./assets/images/heading-main-woman-mob.png" type="image/webp">
                 <img src="./assets/images/heading-main-woman.png" alt="">
               </picture>
             </div>
 
-            <button class="btn-primary">
-              смотреть
-              продукты
+            <button class="btn-primary _gray">
+              <span class="btn-primary__text-top"> смотреть</span>
+              <span class="btn-primary__text-bottom"> продукты</span>
+              <span class="btn-primary__arrow"></span>
             </button>
 
             <div class="heading-main__c-el-footer">
@@ -63,21 +61,24 @@
               </p>
             </div>
           </a>
-          <a href="transformer" class="heading-main__c-el">
+          <a href="transformer" class="heading-main__c-el btn-primary-hover">
             <div class="heading-main__c-el-bg">
               <picture>
-                <source media="(max-width:768px)" srcset="./assets/images/heading-main-transformer-mob.png">
+                <source media="(max-width:768px)" srcset="./assets/images/heading-main-transformer-mob.png" type="image/webp">
                 <img src="./assets/images/heading-main-transformer.png" alt="">
               </picture>
             </div>
 
-            <button class="btn-primary">
-              смотреть
-              продукты
+            <button class="btn-primary _gray">
+             
+                <span class="btn-primary__text-top"> смотреть</span>
+                <span class="btn-primary__text-bottom"> продукты</span>
+                <span class="btn-primary__arrow"></span>
+              
             </button>
 
             <div class="heading-main__c-el-footer">
-              <p class="tl1 _arsen">
+              <p class="tl1 ">
                 Универсальная <br />
                 коллекция
               </p>
@@ -100,7 +101,7 @@
       <include src="./components/_our-news.html"></include>
       <!--  -->
       <include src="./components/_our-contacts.html"></include>
-<!--  -->
+      <!--  -->
     </main>
 
     <include src="./components/_footer.html"></include>

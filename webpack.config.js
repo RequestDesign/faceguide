@@ -109,7 +109,7 @@ function processHtmlLoader(content, loaderContext) {
     /<title>.*?<\/title>/i, `<title>${loaderContext.resourcePath.split('\\').at(-1)}</title>`
   );
   newContent = newContent.replace(
-    /(src|data-src)="(.*?)\.(jpg|png)"/gi,
+    /(src|data-src|srcset)="(.*?)\.(jpg|png)"/gi,
     (match, p1, p2) => {
       return `${p1}="${p2}.webp"`;
     }
@@ -156,6 +156,35 @@ module.exports = {
         extractComments: false, // Убираем комментарии из минифицированного бандла
         exclude: /main\.js$/, // Минимизируем все кроме мэйна, только либы
       }),
+      new ImageMinimizerPlugin({
+        deleteOriginalAssets: true,
+        minimizer: {
+          
+          implementation: ImageMinimizerPlugin.imageminMinify, // Выбор реализации минимизации изображений
+          options: {
+            plugins: [
+              "imagemin-gifsicle", // Плагин для оптимизации GIF изображений
+              "imagemin-mozjpeg", // Плагин для оптимизации JPEG изображений
+              "imagemin-pngquant", // Плагин для оптимизации PNG изображений
+              "imagemin-svgo", // Плагин для оптимизации SVG изображений
+            ],
+          },
+        },
+      }),
+      new ImageminWebpWebpackPlugin({
+        config: [
+          {
+            test: /\.(jpe?g|png)/,
+            options: {
+              quality: 90,
+              overrideExtension: true,
+            },
+          },
+        ],
+        detailedLogs: false,
+        silent: false,
+        strict: true,
+      }),
     ],
     splitChunks: {
       chunks: 'all',
@@ -166,93 +195,18 @@ module.exports = {
             // получает имя, то есть node_modules/packageName/not/this/part.js
             // или node_modules/packageName
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/);
-            if (packageName.length){
+            if (packageName.length) {
               return `${packageName[1].replace('@', '')}`;
             }
-              // имена npm-пакетов можно, не опасаясь проблем, использовать
-              // в URL, но некоторые серверы не любят символы наподобие @
-           
+            // имена npm-пакетов можно, не опасаясь проблем, использовать
+            // в URL, но некоторые серверы не любят символы наподобие @
+
           },
         },
       },
     },
 
   },
-
-  plugins: [
-
-    new CleanWebpackPlugin(),
-    ...pages,
-    new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "[name].[contenthash:8].css",
-    }),
-    new ImageMinimizerPlugin({
-      minimizer: {
-        implementation: ImageMinimizerPlugin.imageminMinify, // Выбор реализации минимизации изображений
-        options: {
-          plugins: [
-            "imagemin-gifsicle", // Плагин для оптимизации GIF изображений
-            "imagemin-mozjpeg", // Плагин для оптимизации JPEG изображений
-            "imagemin-pngquant", // Плагин для оптимизации PNG изображений
-            "imagemin-svgo", // Плагин для оптимизации SVG изображений
-          ],
-        },
-      },
-    }),
-    new ImageminWebpWebpackPlugin({
-      config: [
-        {
-          test: /\.(jpe?g|png)/,
-          options: {
-            quality: 90,
-            overrideExtension: true,
-          },
-        },
-      ],
-      detailedLogs: false,
-      silent: false,
-      strict: true,
-    }),
-    fs.existsSync(sourcePath)
-      ? new CopyPlugin({
-        patterns: [
-          {
-            from: path.resolve(__dirname, "./", "src/assets/", "images"),
-            to: path.resolve(__dirname, "./", "dist/assets/", "images"),
-            noErrorOnMissing: true,
-          },
-          {
-            from: path.resolve(__dirname, "./", "src/assets/", "fonts"),
-            to: path.resolve(__dirname, "./", "dist/assets/", "fonts"),
-            noErrorOnMissing: true,
-          },
-          {
-            from: sourcePath,
-            to: destPath,
-            noErrorOnMissing: true,
-          },
-        ],
-      })
-      : new CopyPlugin({
-        patterns: [
-          {
-            from: path.resolve(__dirname, "./", "src/assets/", "images"),
-            to: path.resolve(__dirname, "./", "dist/assets/", "images"),
-            noErrorOnMissing: true,
-          },
-          {
-            from: path.resolve(__dirname, "./", "src/assets/", "fonts"),
-            to: path.resolve(__dirname, "./", "dist/assets/", "fonts"),
-            noErrorOnMissing: true,
-          },
-        ],
-      }),
-   
-  ],
-
-
-
   module: {
     rules: [
       {
@@ -315,6 +269,37 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+
+    new CleanWebpackPlugin(),
+    ...pages,
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css",
+      chunkFilename: "[name].[contenthash:8].css",
+    }),
+
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "./", "src/assets/images/"),
+          to: path.resolve(__dirname, "./", "dist/assets/images/"),
+          noErrorOnMissing: true,
+        },
+        {
+          from: path.resolve(__dirname, "./", "src/assets/fonts/"),
+          to: path.resolve(__dirname, "./", "dist/assets/fonts/"),
+          noErrorOnMissing: true,
+        },
+        
+      ],
+    })
+
+
+  ],
+
+
+
+  
   /*  externals: {
      swiper: "Swiper", // Исключаем Swiper из обработки
    }, */

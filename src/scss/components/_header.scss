@@ -1,3 +1,143 @@
-.header{
+.header {
     position: absolute;
+    width: 100%;
+    z-index: 100;
+
+
+    @include mobile {
+        background-color: $white;
+    }
+
+    &._opened {
+        @include mobile {
+            & .header__c {
+                grid-template-rows: min-content 1fr;
+                height: 100dvh;
+            }
+
+
+
+            & .header__c-opener {
+                gap: 1.5rem;
+
+                & span {
+                    opacity: 0;
+                    width: 4.7rem;
+                    margin-left: 1.5rem;
+                    background-color: $black;
+
+                    &:first-of-type {
+                        opacity: 1;
+                        transform: rotate(45deg);
+                        transform-origin: left top;
+                    }
+
+                    &:last-of-type {
+                        opacity: 1;
+                        transform: rotate(-45deg);
+                        transform-origin: left bottom;
+
+
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    &__c {
+        padding: 5.8rem 2rem 0rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include mobile {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: min-content 0fr;
+            overflow: hidden;
+        }
+
+
+        &-logo {
+            height: 6.2rem;
+            display: flex;
+
+            @include mobile {
+                justify-content: flex-start;
+                height: 9.2rem;
+                justify-self: flex-start;
+            }
+
+            & img {
+                object-fit: contain;
+            }
+        }
+
+        &-opener {
+
+            justify-self: flex-end;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 5rem;
+            height: 5rem;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all .5s;
+
+
+
+            & span {
+                display: block;
+                width: 3.6rem;
+                height: 1px;
+                background-color: $black;
+                transition: all .5s;
+            }
+
+        }
+
+        &-nav {
+            overflow: hidden;
+            grid-column: span 2;
+            height: 100%;
+
+            &-list {
+                display: flex;
+                gap: 2.4rem;
+                overflow: hidden;
+                height: 100%;
+                @include mobile{
+                    flex-direction: column;
+                    gap: 3.6rem;
+                    align-items: center;
+                   
+                    overflow: auto;
+                    padding-top: 4rem;
+                    margin-top: 2.4rem;
+                    border-top: 2px solid $gray;
+                  
+                }
+
+                &-el {
+                    &-shops {
+                        margin-left: 8rem;
+                    }
+                    &-contacts{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 3.6rem;
+                        margin-top: auto;
+                        margin-bottom: 5.6rem;
+                    }
+                }
+            }
+        }
+
+    }
 }

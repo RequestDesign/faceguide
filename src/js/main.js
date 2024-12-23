@@ -6,7 +6,7 @@ import { rem } from './utils/constants'
 
 
 /* import './js/main' */
-
+const HTML = $('html')
 $(function () {
 
     initSwipers()
@@ -27,10 +27,10 @@ function initSwipers() {
             creativeEffect: {
 
                 prev: {
-                    translate: ["-140%", 0, -400],
+                    translate: ["-150%", -40, -400],
                 },
                 next: {
-                    translate: ["140%", 0, -400],
+                    translate: ["150%", -40, -400],
                 },
             },
             breakpoints: {
@@ -141,14 +141,35 @@ function initSwipers() {
 
 
 function initdropDowns() {
-    const ddBtn = $('.drop-down-target')
+    const ddBtn = $('.drop-down-target').toArray()
     if (!ddBtn) return
+    ddBtn.forEach((el) => {
+        el = $(el)
+        if (el.hasClass('drop-down-fs')) {
+            el.on('click', (e) => {
+                e.preventDefault()
+                if (!e.currentTarget.classList.contains('_opened')) {
+                    e.currentTarget.classList.add('_opened')
+                    e.currentTarget.closest('.drop-down-container')
+                        .classList.add('_opened')
+                    HTML.addClass('_lock')
+                } else {
+                    e.currentTarget.classList.remove('_opened')
+                    e.currentTarget.closest('.drop-down-container')
+                        .classList.remove('_opened')
+                    HTML.removeClass('_lock')
+                }
 
-    ddBtn.on('click', (e) => {
-        e.preventDefault()
-        e.currentTarget.classList.toggle('_opened')
-        e.currentTarget.closest('.drop-down-container')
-            .classList.toggle('_opened')
+            })
+        } else {
+            el.on('click', (e) => {
+                e.preventDefault()
+                e.currentTarget.classList.toggle('_opened')
+                e.currentTarget.closest('.drop-down-container')
+                    .classList.toggle('_opened')
+            })
+        }
+
     })
 
 }

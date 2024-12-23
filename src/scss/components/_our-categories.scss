@@ -1,8 +1,10 @@
 .our-categories {
     position: relative;
-    @include mobile{
+
+    @include mobile {
         padding-bottom: 10rem;
     }
+
     &__top {
         display: flex;
         justify-content: space-between;
@@ -11,7 +13,8 @@
         & .swiper-nav {
             display: flex;
             gap: 3.2rem;
-            @include mobile{
+
+            @include mobile {
                 position: absolute;
                 bottom: 0;
                 left: 50%;
@@ -29,6 +32,16 @@
         @include mobile {
             width: unset;
         }
+        & .btn-primary {
+            opacity: 0;
+        }
+        @include hover {
+            & .btn-primary {
+                opacity: 1;
+            }
+        }
+
+       
 
         &-img {
             position: absolute;

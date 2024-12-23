@@ -22,6 +22,11 @@
             &:last-of-type{
                 @include desktop{
                     grid-column: span 2;
+                    & .btn-primary{
+                        margin-top: auto;
+                        margin-left: 30%;
+                        transform: translateX(-100%);
+                    }
                 }
             }
 
@@ -54,6 +59,7 @@
             }
             & .btn-primary{
                 margin-top: auto;
+                margin-left: 8rem;
             }
 
         }

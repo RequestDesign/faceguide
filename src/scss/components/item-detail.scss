@@ -2,15 +2,22 @@
 
 
 .item-detail-top {
-    min-height: 100rem;
+  
 
     &__c {
+        @include desktop {
+
+            height: 100rem;
+        }
         background-image: url(../assets/images/item-detail.png);
-        height: 100%;
+       
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: center;
+        background-position: top;
+        background-size: contain;
+        background-repeat: no-repeat;
 
         @include mobile {
             background-image: none;
@@ -35,6 +42,7 @@
             align-items: center;
             justify-content: center;
             gap: 4rem;
+            cursor: pointer;
 
             @include mobile {
                 width: 62rem;
@@ -49,6 +57,7 @@
 
         &-img {
             display: flex;
+            height: 100rem;
 
             @include mobile {
                 height: 70rem;
@@ -99,7 +108,8 @@
                     width: 2.2rem;
                     height: 2.2rem;
                     position: relative;
-                    @include mobile{
+
+                    @include mobile {
                         width: 4.4rem;
                         height: 4.4rem;
                     }
@@ -157,7 +167,8 @@
                             overflow: hidden;
                             grid-column: 1;
                             grid-row: 1 / span 2;
-                            @include mobile{
+
+                            @include mobile {
                                 width: 40rem;
                                 height: 40rem;
                             }

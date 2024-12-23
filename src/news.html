@@ -70,7 +70,7 @@
                   20.20
                 </p>
                 <div class="news-item__img-self">
-                  <img src="../assets/images/news1.png" alt="">
+                  <img src="./assets/images/news1.png" alt="">
                 </div>
 
                 <span class="news-item__img-arrow ui-bordered">
@@ -91,7 +91,11 @@
             </a>
           </div>
           <!--  -->
-          <button class="btn-primary">Загрузить еще</button>
+          <button class="btn-primary _gray">
+            <span class="btn-primary__text-top"> загрузить</span>
+            <span class="btn-primary__text-bottom"> еще</span>
+            <span class="btn-primary__arrow"></span>
+          </button>
 
         </div>
       </section>
@@ -105,13 +109,15 @@
               популярной добавке
             </p>
             <p class="txt20">уход</p>
-            <a class="btn-second" href="to about">
-              читать о нас
+            <a class="btn-second btn-second-hover" href="to about">
+              <span class="btn-second__text">
+                читать о нас
+              </span>
             </a>
           </div>
           <div class="news-banner__c-img">
             <picture>
-              <source media="(max-width:768px )" srcset="./assets/images/about-banner.png">
+              <source media="(max-width:768px )" srcset="./assets/images/about-banner.png" type="image/webp">
               <img src="./assets/images/news-banner.png" alt="">
             </picture>
           </div>
