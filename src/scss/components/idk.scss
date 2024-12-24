@@ -1,0 +1,65 @@
+.idk-heading {
+
+    padding-top: 0 !important;
+
+    &__logo {
+        height: 14rem;
+        display: flex;
+        width: fit-content;
+        margin: 5rem auto;
+    }
+
+    &__text {
+        @include desktop {
+            &>p {
+                width: 90rem;
+
+            }
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
+        & .txt20+.tl3 {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.idk-items {
+    margin-bottom: 10rem;
+    &__c {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7.4rem;
+        justify-content: center;
+        @include mobile{
+            gap: 4rem;
+        }
+
+        &-el {
+            width: 56.9rem;
+
+            @include mobile {
+                width: 32rem;
+            }
+
+            &-img {
+                overflow: hidden;
+                border-radius: 3rem;
+                display: flex;
+                margin-bottom: 2rem;
+            }
+
+            & .txt20 {
+                @include mobile {
+                    font-size: 3.2rem;
+                }
+            }
+        }
+    }
+}
