@@ -155,8 +155,8 @@
             background-color: $pink;
             border-color: $pink;
 
-            & .btn-second__text::after {
-                background-image: url(../../assets/images/icons/arrow-right-white.svg);
+            &._arrow .btn-second__text::after {
+                background-image: url(../assets/images/icons/arrow-right-white.svg);
 
             }
         }
@@ -166,7 +166,7 @@
             border-color: $pink;
 
             & .btn-second__text::after {
-                background-image: url(../../assets/images/icons/arrow-right-white.svg);
+                background-image: url(../assets/images/icons/arrow-right-white.svg);
 
             }
         }
