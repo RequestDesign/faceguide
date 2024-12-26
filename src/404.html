@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>само напишется</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <include src="./components/_header.html"></include>
+
+        <main>
+
+            <section class="not-found">
+                <div class="container not-found__c">
+                    <picture class="not-found__c-bg">
+                        <source media="(max-width: 768px )" srcset="./assets/images/404-mob.png">
+                        <img src="./assets/images/404.png" alt="">
+                    </picture>
+                    <a href="#" class="not-found__c-link btn-second-hover">
+                        <span class="tl1">404</span>
+                        <span class="tl4">Страница не найдена</span>
+                        <span class="btn-second _arrow">
+                            <span class="btn-second__text">на главную</span>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <!--  -->
+        </main>
+
+        <include src="./components/_footer.html"></include>
+    </div>
+
+
+</body>
+
+</html>

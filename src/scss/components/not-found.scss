@@ -1,0 +1,50 @@
+.not-found {
+
+    &__c {
+        position: relative;
+        height: 118.4rem;
+        display: flex;
+
+        @include mobile {
+            height: 148rem;
+            padding-left: 0;
+            padding-right: 0;
+
+        }
+
+        &-bg {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        &-link {
+            margin-top: 10rem;
+            margin-left: 19rem;
+            width: 80rem;
+            height: 80rem;
+            border-radius: 50%;
+            border: 1px solid $white;
+            display: flex;
+            flex-direction: column;
+            gap: 4.4rem;
+            justify-content: center;
+            align-items: center;
+            & .btn-second{
+                background-color: $white;
+            }
+
+            @include mobile {
+                margin-top: 3.2rem;
+                margin-left: auto;
+                margin-right: auto;
+                width: 62rem;
+                height: 62rem;
+            }
+        }
+    }
+}
