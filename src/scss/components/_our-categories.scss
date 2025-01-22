@@ -32,16 +32,28 @@
         @include mobile {
             width: unset;
         }
+
         & .btn-primary {
             opacity: 0;
         }
+
         @include hover {
             & .btn-primary {
                 opacity: 1;
             }
         }
 
-       
+        &-ttl {
+            background-color: var(--col-debug);
+            width: 40rem;
+            height: 17rem;
+            mask-image: url('../assets/images/mask/categories.svg');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+
+        }
+
+
 
         &-img {
             position: absolute;
@@ -51,6 +63,11 @@
             height: 100%;
             display: flex;
             z-index: -1;
+            border-radius: 3rem;
+            overflow: hidden;
+            @include mobile{
+                margin-top: 6rem;
+            }
 
             & picture {
                 display: flex;
@@ -72,8 +89,14 @@
         &-count {
             margin-top: auto;
             margin-left: auto;
-            margin-right: 2rem;
-            margin-bottom: 2rem;
+            padding-top: 5rem;
+            padding-left: 5rem;
+            background-color: var(--col-debug);
+            mask-image: url('../assets/images/mask/categories-count.svg');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            width: 10.1rem;
+            height: 10rem;
         }
     }
 

@@ -23,7 +23,8 @@
             width: 100%;
 
             @include mobile {
-align-items: flex-start;
+                align-items: flex-start;
+
                 &-ttl,
                 &-subttl {
 
@@ -129,6 +130,22 @@ align-items: flex-start;
             position: relative;
             height: 100%;
             display: flex;
+            &::after {
+                position: absolute;
+                z-index: 2;
+                content: '';
+                top: 0;
+                right: 0;
+                background-color: var(--col-debug);
+                mask-image: url('../assets/images/mask/about.svg');
+                mask-size: 100% 100%;
+                width: 36rem;
+                height: 13.5rem;
+                @include mobile{
+                    width: 58rem;
+                    height: 20.5rem;
+                }
+            }
 
             @include mobile {
                 height: 72rem;
@@ -136,6 +153,7 @@ align-items: flex-start;
 
             & .ui-bordered {
                 position: absolute;
+                z-index: 3;
                 top: 1rem;
                 right: 0;
 

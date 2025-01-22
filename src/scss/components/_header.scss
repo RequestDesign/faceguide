@@ -3,6 +3,8 @@
     width: 100%;
     z-index: 100;
 
+    @include desktop {}
+
 
     @include mobile {
         background-color: $white;
@@ -48,7 +50,8 @@
     }
 
     &__c {
-        padding: 5.8rem 2rem 0rem;
+        margin-top: 3.2rem;
+        padding: 0rem;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
@@ -63,8 +66,17 @@
 
 
         &-logo {
-            height: 6.2rem;
+            @include desktop {
+                height: 17.5rem;
+                width: 26rem;
+                mask-image: url('../assets/images/mask/header-logo.svg');
+                mask-size: 100% 100%;
+                padding: 2.6rem 0 0 2.1rem;
+            }
+
             display: flex;
+            background-color: $bg;
+
 
             @include mobile {
                 justify-content: flex-start;
@@ -73,7 +85,14 @@
             }
 
             & img {
+                width: 14.8rem;
+                height: 6.2rem;
                 object-fit: contain;
+
+                @include mobile {
+                    width: 22.2rem;
+                    height: 9.3rem;
+                }
             }
         }
 
@@ -103,32 +122,61 @@
         }
 
         &-nav {
-            overflow: hidden;
+            @include desktop {
+                padding-top: 3.2rem;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: '';
+                    background-color: var(--col-debug);
+                    mask-image: url('../assets/images/mask/header-search.svg');
+                    mask-size: 100% 100%;
+                    width: 14rem;
+                    height: 13.7rem;
+                    z-index: -1;
+                }
+            }
+
+            @include mobile {
+                overflow: hidden;
+
+            }
+
             grid-column: span 2;
             height: 100%;
 
             &-list {
                 display: flex;
                 gap: 2.4rem;
-                overflow: hidden;
-                height: 100%;
-                @include mobile{
+
+                height: fit-content;
+                align-items: center;
+
+                @include mobile {
                     flex-direction: column;
                     gap: 3.6rem;
                     align-items: center;
-                   
+                    overflow: hidden;
                     overflow: auto;
                     padding-top: 4rem;
                     margin-top: 2.4rem;
                     border-top: 2px solid $gray;
-                  
+
                 }
 
                 &-el {
+                    height: fit-content;
+
                     &-shops {
-                        margin-left: 8rem;
+                        margin-left: 6rem;
+                        padding: 0 4.1rem 0 2rem;
+
                     }
-                    &-contacts{
+
+                    &-contacts {
                         display: flex;
                         flex-direction: column;
                         gap: 3.6rem;

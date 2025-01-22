@@ -2,15 +2,16 @@
 
 
 .item-detail-top {
-  
+
 
     &__c {
         @include desktop {
 
             height: 100rem;
         }
+
         background-image: url(../assets/images/item-detail.png);
-       
+
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -42,7 +43,7 @@
             align-items: center;
             justify-content: center;
             gap: 4rem;
-            cursor: pointer;
+
 
             @include mobile {
                 width: 62rem;
@@ -58,9 +59,61 @@
         &-img {
             display: flex;
             height: 100rem;
+            padding-top: 10rem;
 
             @include mobile {
                 height: 70rem;
+            }
+
+            & img {
+                object-fit: cover;
+                object-position: top;
+
+            }
+        }
+
+        &-links {
+            display: flex;
+            gap: 4rem;
+
+            &-el {
+                cursor: pointer;
+
+                @include mobile {
+
+                    width: 10rem;
+                    height: 10rem;
+                }
+
+                &::after {
+
+                    content: '';
+                    background-image: url('../assets/images/icons/wb.svg');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: 8rem;
+                    height: 8rem;
+
+                    @include mobile {
+
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                }
+
+                &:first-of-type {
+                    &::after {
+                        background-image: url('../assets/images/icons/ozon.svg');
+                    }
+                }
+
+                &:last-of-type {
+                    &::after {
+                        background-image: url('../assets/images/icons/ym.svg');
+                    }
+                }
             }
         }
     }
