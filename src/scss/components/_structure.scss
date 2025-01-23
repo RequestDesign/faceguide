@@ -130,6 +130,7 @@
             position: relative;
             height: 100%;
             display: flex;
+
             &::after {
                 position: absolute;
                 z-index: 2;
@@ -138,10 +139,13 @@
                 right: 0;
                 background-color: var(--col-debug);
                 mask-image: url('../assets/images/mask/about.svg');
+                -webkit-mask-image: url('../assets/images/mask/about.svg');
                 mask-size: 100% 100%;
+                -webkit-mask-size: 100% 100%;
                 width: 36rem;
                 height: 13.5rem;
-                @include mobile{
+
+                @include mobile {
                     width: 58rem;
                     height: 20.5rem;
                 }

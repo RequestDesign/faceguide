@@ -70,7 +70,9 @@
                 height: 17.5rem;
                 width: 26rem;
                 mask-image: url('../assets/images/mask/header-logo.svg');
+                 -webkit-mask-image: url('../assets/images/mask/header-logo.svg');
                 mask-size: 100% 100%;
+                 -webkit-mask-size: 100% 100%;
                 padding: 2.6rem 0 0 2.1rem;
             }
 
@@ -128,12 +130,14 @@
 
                 &::after {
                     position: absolute;
-                    top: 0;
-                    right: 0;
+                    top: -1px;
+                    right: -1px;
                     content: '';
                     background-color: var(--col-debug);
                     mask-image: url('../assets/images/mask/header-search.svg');
+                     -webkit-mask-image: url('../assets/images/mask/header-search.svg');
                     mask-size: 100% 100%;
+                     -webkit-mask-size: 100% 100%;
                     width: 14rem;
                     height: 13.7rem;
                     z-index: -1;

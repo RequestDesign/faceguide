@@ -40,7 +40,7 @@
                 content: ' /';
             }
 
-            &:last-of-type {
+            &:last-child {
                 &::after {
                     content: '';
                 }

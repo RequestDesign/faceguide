@@ -21,12 +21,12 @@
             gap: 2.4rem;
             justify-self: center;
 
-            &:nth-child(1) {
+            &._first {
                 justify-self: flex-start;
                 text-align: left;
             }
 
-            &:nth-child(3) {
+            &._last{
                 justify-self: flex-end;
             }
 
@@ -34,6 +34,9 @@
                 flex-direction: column;
                 justify-self: flex-end;
                 text-align: right;
+            }
+            &.footer__side-logo{
+                justify-self: center;
             }
 
 
@@ -44,6 +47,13 @@
             display: flex;
             height: 100%;
             width: fit-content;
+
+            & a {
+                height: 100%;
+                width: fit-content;
+                display: flex;
+                margin: auto;
+            }
 
 
 
@@ -61,7 +71,7 @@
                 &._bottom {
                     grid-column: 1 / span 2;
                     justify-self: center;
-                    margin-bottom:0 ;
+                    margin-bottom: 0;
                 }
 
             }
@@ -72,8 +82,9 @@
             border-radius: 3rem;
             padding: 0 2.8rem;
             box-sizing: border-box;
-            @include mobile{
-            padding: 3rem 2.8rem;
+
+            @include mobile {
+                padding: 3rem 2.8rem;
 
             }
         }

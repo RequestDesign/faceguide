@@ -48,7 +48,9 @@
             width: 40rem;
             height: 17rem;
             mask-image: url('../assets/images/mask/categories.svg');
+            -webkit-mask-image: url('../assets/images/mask/categories.svg');
             mask-size: contain;
+            -webkit-mask-size: contain;
             mask-repeat: no-repeat;
 
         }
@@ -65,7 +67,8 @@
             z-index: -1;
             border-radius: 3rem;
             overflow: hidden;
-            @include mobile{
+
+            @include mobile {
                 margin-top: 6rem;
             }
 
@@ -93,7 +96,9 @@
             padding-left: 5rem;
             background-color: var(--col-debug);
             mask-image: url('../assets/images/mask/categories-count.svg');
+            -webkit-mask-image: url('../assets/images/mask/categories-count.svg');
             mask-size: contain;
+            -webkit-mask-size: contain;
             mask-repeat: no-repeat;
             width: 10.1rem;
             height: 10rem;
