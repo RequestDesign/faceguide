@@ -36,13 +36,14 @@
             justify-self: center;
             width: 80rem;
             height: 80rem;
-            border-radius: 50%;
-            border: 1px solid $white;
+         /*    border-radius: 50%;
+            border: 1px solid $white; */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 4rem;
+            text-align: center;
 
 
             @include mobile {
@@ -52,7 +53,7 @@
             }
 
             & .tl1 {
-                max-width: 60%;
+              
             }
         }
 
@@ -88,7 +89,7 @@
                 &::after {
 
                     content: '';
-                    background-image: url('../assets/images/icons/wb.svg');
+                   
                     background-position: center;
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -102,14 +103,17 @@
                         height: 10rem;
                     }
                 }
+                &._wb::after{
+                    background-image: url('../assets/images/icons/wb.svg');
+                }
 
-                &:first-of-type {
+                &._ozon {
                     &::after {
                         background-image: url('../assets/images/icons/ozon.svg');
                     }
                 }
 
-                &:last-of-type {
+                &._ym {
                     &::after {
                         background-image: url('../assets/images/icons/ym.svg');
                     }
