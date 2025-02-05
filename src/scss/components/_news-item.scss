@@ -8,10 +8,10 @@
         justify-content: space-between;
 
         @include mobile {
-            height: 72rem;
+            height: 74rem;
         }
 
-        &::before {
+        /*    &::before {
             content: '';
 
             position: absolute;
@@ -54,7 +54,7 @@
                 height: 21.6rem;
             }
         }
-
+ */
         &-self {
             position: absolute;
             top: 0;
@@ -63,7 +63,17 @@
             height: 100%;
             display: flex;
             z-index: -1;
+            mask-image: url('../assets/images/mask/news.svg');
+            -webkit-mask-image: url('../assets/images/mask/news.svg');
+            mask-size: 100%;
+            -webkit-mask-size: 100%;
+            mask-repeat: no-repeat;
+            overflow: hidden;
 
+            & img {
+                object-fit: cover;
+                object-position: center;
+            }
         }
 
         &-arrow {

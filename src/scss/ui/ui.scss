@@ -34,7 +34,11 @@
         @include mobile {
             font-size: 3.2rem;
         }
-
+& a{
+    @include hover {
+        color: $gray;
+    }
+}
         &-el {
             &::after {
                 content: ' /';
@@ -46,9 +50,7 @@
                 }
             }
 
-            @include hover {
-                color: $gray;
-            }
+            
         }
 
     }
@@ -59,7 +61,7 @@
         user-select: none;
         width: fit-content;
        
-        &:hover{
+        &._opened{
             & .ui-drop-down__c{
                 max-height: 100vh;
             }

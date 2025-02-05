@@ -1,0 +1,17 @@
+<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 343 203">
+  <mask id="b" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <mask id="a" fill='black'>
+      <path fill-rule="evenodd" d="M0 177V45c0-12 10-22 22-22h115c6 0 11-5 11-11 0-7 5-12 12-12h161c12 0 22 10 22 22v128c0 10-8 18-18 18s-18 8-18 18c0 9-8 17-17 17H26c-14 0-26-12-26-26Z" clip-rule="evenodd"/>
+    </mask>
+    <path fill='black' fill-rule="evenodd" d="M0 177V45c0-12 10-22 22-22h115c6 0 11-5 11-11 0-7 5-12 12-12h161c12 0 22 10 22 22v128c0 10-8 18-18 18s-18 8-18 18c0 9-8 17-17 17H26c-14 0-26-12-26-26Z" clip-rule="evenodd"/>
+    <path fill='black' d="M-1 45v132h2V45h-2Zm138-23H22v2h115v-2ZM321-1H160v2h161v-2Zm23 151V22h-2v128h2Zm-19 19v-2 2ZM26 204h264v-2H26v2Zm-27-27c0 15 12 27 27 27v-2c-14 0-25-11-25-25h-2Zm307 9c0 9-7 16-16 16v2c10 0 18-8 18-18h-2Zm19-19c-11 0-19 8-19 19h2c0-10 7-17 17-17v-2ZM321 1c12 0 21 9 21 21h2c0-13-10-23-23-23v2ZM149 12c0-6 5-11 11-11v-2c-7 0-13 6-13 13h2Zm-12 12c6 0 12-6 12-12h-2c0 5-5 10-10 10v2Zm205 126c0 9-8 17-17 17v2c10 0 19-9 19-19h-2ZM1 45c0-12 9-21 21-21v-2C9 22-1 32-1 45h2Z" mask="url(#a)"/>
+  </mask>
+  <g mask="url(#b)">
+    <path fill='black' d="M-30-54h463v290H-30z"/>
+  </g>
+  <defs>
+    <pattern id="c" width="1" height="1" patternContentUnits="objectBoundingBox">
+      <use xlink:href="#d" transform="scale(.0006815 .00108812)"/>
+    </pattern>
+  </defs>
+</svg>

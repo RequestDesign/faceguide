@@ -12,6 +12,19 @@
 
     & picture {
         display: flex;
+        mask-image: url('../assets/images/mask/banner-promo.svg');
+        -webkit-mask-image: url('../assets/images/mask/banner-promo.svg');
+        mask-size: 100%;
+        -webkit-mask-size: 100%;
+        mask-repeat: no-repeat;
+        overflow: hidden;
+        @include mobile{
+            mask-image: url('../assets/images/mask/banner-promo-mob.svg');
+            -webkit-mask-image: url('../assets/images/mask/banner-promo-mob.svg');
+        }
+        & *{
+            object-fit: cover;
+        }
 
     }
 

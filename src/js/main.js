@@ -124,7 +124,7 @@ function initSwipers() {
             modules: [Navigation],
             slidesPerView: 3.3,
             spaceBetween: rem(3),
-            centeredSlides: true,
+          
             breakpoints: {
                 768: {
                     slidesPerView: 8,
